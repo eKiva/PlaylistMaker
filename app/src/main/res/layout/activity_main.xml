@@ -7,13 +7,83 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_screen_background"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/padding_horizontal"
+        android:paddingBottom="@dimen/padding_bottom">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/main_screen_background"
+            android:text="@string/title_maker"
+            android:gravity="center_vertical"
+            android:textColor="@color/another_screen_background"
+            android:textSize="@dimen/text_big"
+            tools:ignore="MissingConstraints" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/padding_main"
+
+            android:background="@color/main_screen_background"
+            android:orientation="vertical"
+            >
+
+            <Button
+                android:id="@+id/button_find"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/another_screen_background"
+                android:text="@string/button_find"
+                android:textColor="@color/another_screen_title"
+                android:textSize="@dimen/text_big"
+                app:icon="@drawable/find_vector"
+                app:iconGravity="textStart"
+                app:iconPadding="@dimen/padding_small"
+                app:iconTint="@color/another_screen_title"
+                app:cornerRadius="@dimen/padding_main"/>
+
+            <Button
+                android:id="@+id/button_media"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginVertical="9dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/another_screen_background"
+                android:text="@string/button_media"
+                android:textColor="@color/another_screen_title"
+                android:textSize="@dimen/text_big"
+                app:icon="@drawable/media_vector"
+                app:iconGravity="textStart"
+                app:iconPadding="@dimen/padding_small"
+                app:iconTint="@color/another_screen_title"
+                app:cornerRadius="@dimen/padding_main"/>
+
+            <Button
+                android:id="@+id/button_tools"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/another_screen_background"
+                android:text="@string/button_tools"
+                android:textColor="@color/another_screen_title"
+                android:textSize="@dimen/text_big"
+                app:icon="@drawable/tools_vector"
+                app:iconGravity="textStart"
+                app:iconPadding="@dimen/padding_small"
+                app:iconTint="@color/another_screen_title"
+                app:cornerRadius="@dimen/padding_main"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
