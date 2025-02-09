@@ -16,8 +16,8 @@
         android:paddingBottom="@dimen/padding_bottom">
 
         <TextView
-            android:layout_width="match_parent"
             android:layout_height="64dp"
+            android:layout_width="match_parent"
             android:background="@color/main_screen_background"
             android:text="@string/title_maker"
             android:gravity="center_vertical"
