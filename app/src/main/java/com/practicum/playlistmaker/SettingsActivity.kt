@@ -1,9 +1,10 @@
 package com.practicum.playlistmaker
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -25,5 +26,33 @@ class SettingsActivity : AppCompatActivity() {
             val displayIntent = Intent(this, MainActivity::class.java)
             startActivity(displayIntent)
         }
+
+        val toShare = findViewById<TextView>(R.id.share)
+        toShare.setOnClickListener {
+            val shareIntent = Intent(Intent.ACTION_SEND)
+            shareIntent.setType("text/plain")
+            shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.tools_share_link))
+            startActivity(shareIntent)
+        }
+
+
+        val toSupport = findViewById<TextView>(R.id.toSupport)
+        toSupport.setOnClickListener {
+            val shareIntent = Intent(Intent.ACTION_SENDTO)
+            shareIntent.data = Uri.parse("mailto:")
+            shareIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf(getString(R.string.tools_to_support_email)))
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.tools_to_support_topic))
+            shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.tools_to_support_text))
+            startActivity(shareIntent)
+        }
+
+
+        val toAgreement = findViewById<TextView>(R.id.userAgreement)
+        toAgreement.setOnClickListener {
+            val shareIntent = Intent(Intent.ACTION_VIEW)
+            shareIntent.data = Uri.parse(getString(R.string.tools_to_agreement))
+            startActivity(shareIntent)
+        }
+
     }
 }

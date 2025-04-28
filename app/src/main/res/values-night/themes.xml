@@ -1,7 +1,35 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.PlaylistMaker" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+        <!-- Основные цвета брэнда -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Background экранов -->
+        <item name="colorMainActivityBackground">@color/black</item>
+        <item name="colorActivityBackground">@color/black</item>
+
+        <!-- Экран настроек SettingsActivity  -->
+        <item name="colorIconTint">@color/white</item>
+        <item name="colorTextOnBackground">@color/white</item>
+        <item name="colorText">@color/white</item>
+
+
+        <!--  Switcher переключения темы в SettingsActivity  -->
+        <item name="thumbTint">@color/blue</item>
+        <item name="trackTint">@color/blue_switcher</item>
+
+         <!--  EditText в SearchActivity  -->
+        <item name="editTextHintColor">@color/black</item>
+        <item name="editTextDrawableTint">@color/black</item>
+        <item name="editTextBackgroundDrawable">@drawable/rounded_edittext_night</item>
+
     </style>
+
 </resources>

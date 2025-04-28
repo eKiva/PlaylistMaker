@@ -8,8 +8,8 @@
     <dimen name="padding_top">14dp</dimen>
     <dimen name="padding_bottom">28dp</dimen>
 
-    <dimen name="botton_size">24dp</dimen>
-    <dimen name="botton_big_size">48dp</dimen>
+    <dimen name="button_size">24dp</dimen>
+    <dimen name="button_big_size">48dp</dimen>
     <dimen name="padding_mini">4dp</dimen>
     <dimen name="padding_small">8dp</dimen>
     <dimen name="padding_horizontal">16dp</dimen>

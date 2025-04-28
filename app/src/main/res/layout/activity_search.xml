@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/search"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SearchActivity">
@@ -10,35 +10,41 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/another_screen_background"
+        android:background="?attr/colorPrimary"
         android:orientation="vertical"
         android:paddingBottom="@dimen/padding_bottom">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/title_panel_height"
-            android:background="@color/another_screen_background"
+            android:background="?attr/colorPrimary"
             android:orientation="horizontal"
             android:padding="@dimen/padding_mini">
             <ImageView
                 android:id="@+id/button_to_main"
-                android:layout_width="@dimen/botton_big_size"
-                android:layout_height="@dimen/botton_big_size"
-                android:scaleType="centerInside"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/back_vector"
-                android:contentDescription="@string/button_find"/>
+                android:contentDescription="@string/button_find"
+                style="@style/ButtonBackStyle"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/another_screen_background"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="@dimen/padding_main"
                 android:text="@string/button_find"
-                android:textColor="@color/another_screen_title"
-                android:textSize="@dimen/text_big"/>
+                style="@style/TitleActivityStyle"/>
         </LinearLayout>
 
+        <FrameLayout style="@style/SearchFrameStyle">
+
+             <EditText
+                android:id="@+id/search_editText"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                style="@style/SearchEditTextStyle"
+                />
+
+            <ImageView
+               android:id="@+id/search_clear_imageView"
+               style="@style/ClearImageViewStyle" />
+        </FrameLayout>
+
     </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

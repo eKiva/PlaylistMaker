@@ -11,33 +11,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/another_screen_background"
+        android:background="?attr/colorPrimary"
         android:orientation="vertical"
         android:paddingBottom="@dimen/padding_bottom">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/title_panel_height"
-            android:background="@color/another_screen_background"
+            android:background="?attr/colorPrimary"
             android:orientation="horizontal"
+
             android:padding="@dimen/padding_mini">
             <ImageView
+                style="@style/ButtonBackStyle"
                 android:id="@+id/button_to_main"
-                android:layout_width="@dimen/botton_big_size"
-                android:layout_height="@dimen/botton_big_size"
-                android:scaleType="centerInside"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/back_vector"
                 android:contentDescription="@string/button_tools"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/another_screen_background"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="@dimen/padding_main"
                 android:text="@string/button_tools"
-                android:textColor="@color/another_screen_title"
-                android:textSize="@dimen/text_big"/>
+                style="@style/TitleActivityStyle"/>
         </LinearLayout>
 
         <LinearLayout
@@ -52,54 +43,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/tools_panel_height">
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="start"
-                    android:gravity="center_vertical"
                     android:text="@string/tools_dark_theme"
-                    android:textColor="@color/another_screen_title"
-                    android:textSize="@dimen/text_middle"/>
+                    style="@style/SettingsPanelsStyle"/>
 
                 <Switch
-                    android:layout_width="@dimen/botton_big_size"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="end"
-                    android:gravity="center_vertical"
-                    android:paddingRight="0dp"
-                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+                    tools:ignore="UseSwitchCompatOrMaterialXml"
+                    style="@style/SwitcherStyle"/>
             </FrameLayout>
 
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/tools_panel_height"
-                android:layout_gravity="start"
-                android:gravity="center_vertical"
                 android:text="@string/tools_share_the_app"
-                android:textColor="@color/another_screen_title"
-                android:textSize="@dimen/text_middle"
-                app:drawableEndCompat="@drawable/share_vector"/>
+                android:id="@+id/share"
+                app:drawableEndCompat="@drawable/share_vector"
+                style="@style/SettingsPanelsStyle"/>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/tools_panel_height"
-                android:layout_gravity="start"
-                android:gravity="center_vertical"
                 android:text="@string/tools_write_to_support"
-                android:scaleType="centerInside"
-                android:textColor="@color/another_screen_title"
-                android:textSize="@dimen/text_middle"
-                app:drawableEndCompat="@drawable/support_vector"/>
+                android:id="@+id/toSupport"
+                app:drawableEndCompat="@drawable/support_vector"
+                style="@style/SettingsPanelsStyle"/>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/tools_panel_height"
-                android:layout_gravity="start"
-                android:gravity="center_vertical"
                 android:text="@string/tools_user_agreement"
-                android:textColor="@color/another_screen_title"
-                android:textSize="@dimen/text_middle"
-                app:drawableEndCompat="@drawable/arrow_forward_vector"/>
+                android:id="@+id/userAgreement"
+                app:drawableEndCompat="@drawable/arrow_forward_vector"
+                style="@style/SettingsPanelsStyle"/>
 
 
         </LinearLayout>
