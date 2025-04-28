@@ -7,13 +7,56 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorMainActivityBackground"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/padding_horizontal"
+        android:paddingBottom="@dimen/padding_bottom">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="?attr/colorMainActivityBackground"
+            android:text="@string/title_maker"
+            android:gravity="center_vertical"
+            android:textColor="@color/another_screen_background"
+            android:textSize="@dimen/text_big"
+            tools:ignore="MissingConstraints"
+            android:fontFamily="@font/ys_display_medium"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/padding_main"
+
+            android:background="?attr/colorMainActivityBackground"
+            android:orientation="vertical"
+            >
+
+            <Button
+                android:id="@+id/button_find"
+                android:text="@string/button_find"
+                app:icon="@drawable/find_vector"
+                style="@style/MainButtonsStyle"/>
+
+            <Button
+                android:id="@+id/button_media"
+                android:text="@string/button_media"
+                app:icon="@drawable/media_vector"
+                style="@style/MainButtonsStyle"/>
+
+            <Button
+                android:id="@+id/button_tools"
+                android:text="@string/button_tools"
+                app:icon="@drawable/tools_vector"
+                style="@style/MainButtonsStyle"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

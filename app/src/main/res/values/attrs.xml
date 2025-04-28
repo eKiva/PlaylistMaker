@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+
+    <attr name="colorMainActivityBackground" format="color" />
+    <attr name="colorActivityBackground" format="color" />
+
+
+    <attr name="colorIconTint" format="color" />
+    <attr name="colorTextOnBackground" format="color" />
+    <attr name="colorText" format="color" />
+
+
+    <!--  Switcher переключения темы в SettingsActivity  -->
+    <attr name="switcherThumbTint" format="color" />
+    <attr name="switcherTrackTint" format="color" />
+
+    <!--  EditText в SearchActivity  -->
+    <attr name="editTextHintColor" format="color" />
+    <attr name="editTextDrawableTint" format="color" />
+    <attr name="editTextBackgroundDrawable" format="reference" />
+
+
+
+</resources>

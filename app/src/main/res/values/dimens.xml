@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tools_panel_height">61dp</dimen>
+    <dimen name="title_panel_height">56dp</dimen>
+
+
+    <dimen name="padding_main">16dp</dimen>
+    <dimen name="padding_top">14dp</dimen>
+    <dimen name="padding_bottom">28dp</dimen>
+
+    <dimen name="button_size">24dp</dimen>
+    <dimen name="button_big_size">48dp</dimen>
+    <dimen name="padding_mini">4dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_horizontal">16dp</dimen>
+    <dimen name="padding_big">24dp</dimen>
+
+    <dimen name="text_big">22sp</dimen>
+    <dimen name="text_middle">16sp</dimen>
+
+</resources>
