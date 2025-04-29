@@ -1,10 +1,13 @@
 package com.practicum.playlistmaker
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.MotionEvent
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
@@ -53,6 +56,8 @@ class SearchActivity : AppCompatActivity() {
 
         clearButton.setOnClickListener {
             searchEditText.setText("")
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
         }
     }
 
@@ -77,6 +82,15 @@ class SearchActivity : AppCompatActivity() {
         searchedText = savedInstanceState.getString(SEARCHED_TEXT, EMPTY_TEXT)
         val searchEditText = findViewById<EditText>(R.id.search_editText)
         searchEditText.setText(searchedText)
+    }
+
+    //Убираем клавиатуру, когда она нам не нужна
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        if (currentFocus != null) {
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+        }
+        return super.dispatchTouchEvent(ev)
     }
 
     //Константные переменные для сохранения и получения значений
