@@ -145,7 +145,6 @@
         <item name="tint">?attr/dotColor</item>
     </style>
 
-
     <style name="ArtWorkImageStyle">
         <item name="android:layout_width">@dimen/art_size</item>
         <item name="android:layout_height">@dimen/art_size</item>
