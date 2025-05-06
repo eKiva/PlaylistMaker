@@ -11,6 +11,7 @@
         <item name="colorSecondary">@color/white</item>
         <item name="colorOnSecondary">@color/black</item>
 
+
         <!-- Background экранов -->
         <item name="colorMainActivityBackground">@color/blue</item>
         <item name="colorActivityBackground">@color/white</item>
@@ -31,6 +32,7 @@
         <item name="editTextBackgroundDrawable">@drawable/rounded_edittext</item>
 
     </style>
+
 
 
 </resources>
