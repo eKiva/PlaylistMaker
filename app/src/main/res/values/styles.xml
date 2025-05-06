@@ -135,6 +135,8 @@
         <item name="tint">?attr/arrowColor</item>
     </style>
 
+
+
     <style name="DotStyle">
         <item name="android:layout_width">@dimen/search_artist_name_height</item>
         <item name="android:layout_height">@dimen/search_artist_name_height</item>
