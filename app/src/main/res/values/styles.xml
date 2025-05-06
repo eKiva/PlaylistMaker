@@ -101,4 +101,67 @@
     </style>
 
 
+
+    <!-- Список песен в SearchActivity -->
+    <style name="SongTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/search_track_name_height</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:fontFamily">@font/ys_display_regular</item>
+        <item name="android:textColor">?attr/searchSongTextColor</item>
+        <item name="android:textSize">@dimen/search_text</item>
+        <item name="android:textFontWeight">400</item>>
+    </style>
+
+
+    <style name="DetailsTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:fontFamily">@font/ys_display_regular</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:textSize">@dimen/search_small_text</item>
+        <item name="android:textColor">?attr/searchSongDetailsTextColor</item>
+    </style>
+
+    <style name="ArrowForwardStyle">
+        <item name="android:layout_width">@dimen/button_size</item>
+        <item name="android:layout_height">@dimen/button_size</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:src">@drawable/arrow_forward</item>
+        <item name="android:contentDescription">@string/search_image_view_description</item>
+        <item name="tint">?attr/arrowColor</item>
+    </style>
+
+    <style name="DotStyle">
+        <item name="android:layout_width">@dimen/search_artist_name_height</item>
+        <item name="android:layout_height">@dimen/search_artist_name_height</item>
+        <item name="android:src">@drawable/dot</item>
+        <item name="android:contentDescription">@string/dot_description</item>
+        <item name="tint">?attr/dotColor</item>
+    </style>
+
+
+    <style name="ArtWorkImageStyle">
+        <item name="android:layout_width">@dimen/art_size</item>
+        <item name="android:layout_height">@dimen/art_size</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_margin">@dimen/art_margin</item>
+        <item name="android:layout_marginStart">@dimen/art_margin_start</item>
+        <item name="android:contentDescription">@string/album_artwork_description</item>
+    </style>
+
+    <style name="ArtWorkCardStyle">
+        <item name="android:layout_width">@dimen/art_size</item>
+        <item name="android:layout_height">@dimen/art_size</item>
+        <item name="android:layout_margin">@dimen/art_margin</item>
+        <item name="cardBackgroundColor">?attr/colorActivityBackground</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardCornerRadius">@dimen/artwork_radius</item>
+    </style>
+
+
+
 </resources>

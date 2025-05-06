@@ -19,4 +19,8 @@
 
     <string name="search_hint">Поиск</string>
 
+
+    <string name="album_artwork_description">Album artwork</string>
+    <string name="search_image_view_description">Open search result</string>
+    <string name="dot_description">Dot</string>
 </resources>

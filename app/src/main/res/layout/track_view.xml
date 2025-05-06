@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/search_item_view_height"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="@dimen/search_item_view_margin_start"
+    android:orientation="horizontal">
+
+    <!--  Картинка к песне  -->
+    <androidx.cardview.widget.CardView
+        style="@style/ArtWorkCardStyle">
+        <ImageView
+            android:id="@+id/artwork"
+            style="@style/ArtWorkImageStyle" />
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="@dimen/search_linear_layout_height"
+        android:layout_weight="1"
+        android:layout_marginEnd="0dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <!--  Название песни  -->
+        <TextView
+            style="@style/SongTextStyle"
+            android:id="@+id/trackName"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/search_artist_name_height"
+            android:orientation="horizontal">
+
+            <!--  Исполнитель + Точечка + Длительность  -->
+            <TextView
+                android:id="@+id/artistName"
+                style="@style/DetailsTextStyle"/>
+            <ImageView
+                android:id="@+id/dot"
+                style="@style/DotStyle"/>
+            <TextView
+                android:id="@+id/trackTime"
+                style="@style/DetailsTextStyle"/>
+
+            </LinearLayout>
+
+    </LinearLayout>
+
+    <!--  Стрелка назад  -->
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="@dimen/forward_frame_width"
+        android:layout_height="@dimen/search_item_view_height">
+        <ImageView
+            style="@style/ArrowForwardStyle"/>
+   </FrameLayout>
+
+</LinearLayout>

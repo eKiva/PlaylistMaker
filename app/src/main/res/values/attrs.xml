@@ -21,6 +21,10 @@
     <attr name="editTextDrawableTint" format="color" />
     <attr name="editTextBackgroundDrawable" format="reference" />
 
-
+    <!--  Список песен  -->
+    <attr name="dotColor" format="color" />
+    <attr name="arrowColor" format="color" />
+    <attr name="searchSongTextColor" format="color" />
+    <attr name="searchSongDetailsTextColor" format="color" />
 
 </resources>
