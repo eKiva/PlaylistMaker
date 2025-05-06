@@ -18,4 +18,23 @@
     <dimen name="text_big">22sp</dimen>
     <dimen name="text_middle">16sp</dimen>
 
+
+    <!--  Список песен  -->
+    <dimen name="art_size">45dp</dimen>
+    <dimen name="artwork_radius">2dp</dimen>
+    <dimen name="art_margin">8dp</dimen>
+    <dimen name="art_margin_start">13dp</dimen>
+
+    <dimen name="search_linear_layout_height">32dp</dimen>
+    <dimen name="search_artist_name_height">13dp</dimen>
+    <dimen name="search_track_name_height">19dp</dimen>
+
+    <dimen name="search_item_view_height">61dp</dimen>
+    <dimen name="search_item_view_margin_start">5dp</dimen>
+    <dimen name="search_text">16sp</dimen>
+    <dimen name="search_small_text">11sp</dimen>
+
+    <dimen name="forward_frame_width">44dp</dimen>
+
+
 </resources>
