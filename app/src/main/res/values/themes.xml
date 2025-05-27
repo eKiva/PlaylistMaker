@@ -36,8 +36,8 @@
         <item name="arrowColor">@color/gray</item>
         <item name="searchSongTextColor">@color/black</item>
         <item name="searchSongDetailsTextColor">@color/gray</item>
-
-
+        <item name="searchError">@drawable/search_error_light_mode</item>
+        <item name="searchNoResults">@drawable/search_no_results_light_mode</item>
     </style>
 
 
