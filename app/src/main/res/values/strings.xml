@@ -23,4 +23,9 @@
     <string name="album_artwork_description">Album artwork</string>
     <string name="search_image_view_description">Open search result</string>
     <string name="dot_description">Dot</string>
+
+    <string name="search_no_results_placeholder_text">Ничего не нашлось</string>
+    <string name="search_error_placeholder_text">Проблемы со связью\n\nЗагрузка не удалась. Проверьте\nподключение к интернету</string>
+    <string name="search_error_button_text">Обновить</string>
+
 </resources>

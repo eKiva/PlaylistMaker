@@ -165,4 +165,35 @@
 
 
 
+    <style name="SearchPlaceHolderStyle">
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:fontFamily">@font/ys_display_medium</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:layout_marginTop">@dimen/search_result_error_text_margin_top</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+
+    <style name="SearchErrorButtonStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:layout_marginTop">@dimen/search_result_error_button_margin_top</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:text">@string/search_error_button_text</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/ys_display_medium</item>
+        <item name="android:textFontWeight">500</item>>
+        <item name="cornerRadius">@dimen/padding_main</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:backgroundTint">?attr/colorOnPrimary</item>
+        <item name="android:textAlignment">center</item>
+
+    </style>
+
 </resources>
