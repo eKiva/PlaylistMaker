@@ -38,18 +38,44 @@
             android:paddingHorizontal="@dimen/padding_main"
             android:orientation="vertical">
 
-
+            <!--
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/tools_panel_height">
                 <TextView
                     android:text="@string/tools_dark_theme"
                     style="@style/SettingsPanelsStyle"/>
-
                 <Switch
                     tools:ignore="UseSwitchCompatOrMaterialXml"
                     style="@style/SwitcherStyle"/>
+            </FrameLayout>-->
+
+
+            <!--<FrameLayout
+                android:id="@+id/darkThemeFrameLayout"
+                style="@style/MenuItemFrameStyle">
+
+                <TextView
+                    style="@style/MenuItemTextViewStyle"
+                    android:text="@string/dark_theme_title"/>
+
+                <Switch
+                    android:id="@+id/themeSwitch"
+                    style="@style/SwitchStyle" />
+
+            </FrameLayout>-->
+
+            <FrameLayout
+                android:id="@+id/darkThemeFrameLayout"
+                style="@style/MenuItemFrameStyle">
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/themeSwitch"
+                    style="@style/SwitchStyle"/>
+
             </FrameLayout>
+
+
 
 
             <TextView

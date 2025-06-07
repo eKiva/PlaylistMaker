@@ -9,6 +9,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.playlistmaker.App
+
+
+//++
+const val PREFERENCES = "app_settings"
+const val DARK_THEME = "setting_dark_theme"
+const val TRACKS_SEARCH_HISTORY = "tracks_search_history"
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +27,11 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        //
+        val sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
+        val darkThemeEnabled: Boolean = sharedPreferences.getBoolean(DARK_THEME, false)
+        (applicationContext as App).switchTheme(darkThemeEnabled)
 
 
         val buttonSearch = findViewById<Button>(R.id.button_find)

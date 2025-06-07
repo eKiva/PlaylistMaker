@@ -27,4 +27,11 @@
     <attr name="searchSongTextColor" format="color" />
     <attr name="searchSongDetailsTextColor" format="color" />
 
+    <!--  Результат поиска песен   -->
+    <attr name="searchNoResults" format="reference" />
+    <attr name="searchError" format="reference" />
+
+    <!--  Свичер   -->
+    <attr name="currentThemeSwitcherTitle" format="string" />
+
 </resources>
