@@ -22,8 +22,9 @@
 
 
         <!--  Switcher переключения темы в SettingsActivity  -->
-        <item name="thumbTint">@color/blue</item>
-        <item name="trackTint">@color/blue_switcher</item>
+        <item name="switcherThumbTint">@color/blue</item>
+        <item name="switcherTrackTint">@color/blue_switcher</item>
+        <item name="currentThemeSwitcherTitle">Светлая тема</item>
 
          <!--  EditText в SearchActivity  -->
         <item name="editTextHintColor">@color/black</item>
@@ -38,6 +39,9 @@
         <item name="searchSongDetailsTextColor">@color/white</item>
         <item name="searchError">@drawable/search_error_dark_mode</item>
         <item name="searchNoResults">@drawable/search_no_results_dark_mode</item>
+
+
+
     </style>
 
 </resources>
