@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
+
 class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +54,7 @@ class SettingsActivity : AppCompatActivity() {
             shareIntent.data = Uri.parse(getString(R.string.tools_to_agreement))
             startActivity(shareIntent)
         }
+
 
     }
 }
