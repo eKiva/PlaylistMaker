@@ -24,8 +24,7 @@
 
         <!--  Switcher переключения темы в SettingsActivity  -->
         <item name="switcherThumbTint">@color/gray</item>
-        <item name="switcherTrackTint">@color/gray_light</item>
-        <item name="currentThemeSwitcherTitle">Темная тема</item>
+        <item name="switcherTrackTint">@color/gray</item>
 
 
         <!--  EditText в SearchActivity  -->

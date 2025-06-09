@@ -27,11 +27,6 @@
     <string name="search_no_results_placeholder_text">Ничего не нашлось</string>
     <string name="search_error_placeholder_text">Проблемы со связью\n\nЗагрузка не удалась. Проверьте\nподключение к интернету</string>
     <string name="search_error_button_text">Обновить</string>
-    <string name="dark_theme_title">Темная тема</string>
 
-
-
-    <string name="search_history_reset_button_text">Очистить историю</string>
-    <string name="search_history_title">Вы искали</string>
 
 </resources>

@@ -24,7 +24,6 @@
         <!--  Switcher переключения темы в SettingsActivity  -->
         <item name="switcherThumbTint">@color/blue</item>
         <item name="switcherTrackTint">@color/blue_switcher</item>
-        <item name="currentThemeSwitcherTitle">Светлая тема</item>
 
          <!--  EditText в SearchActivity  -->
         <item name="editTextHintColor">@color/black</item>
