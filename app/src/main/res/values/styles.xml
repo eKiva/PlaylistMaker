@@ -101,11 +101,15 @@
         <item name="android:layout_width">match_parent</item>
     </style>
 
-    <style name="SwitchStyle">
-        <item name="android:layout_width">match_parent</item>
+    <style name="SwitcherStyle">
+        <item name="android:text">?attr/currentThemeSwitcherTitle</item>
         <item name="android:layout_height">match_parent</item>
-
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_gravity">start</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textSize">@dimen/search_text</item>
+        <item name="android:fontFamily">@font/ys_display_regular</item>
+        <item name="android:textFontWeight">400</item>>
 
         <item name="thumbTint">?attr/switcherThumbTint</item>
         <item name="trackTint">?attr/switcherTrackTint</item>
@@ -230,6 +234,24 @@
 
     </style>
 
+    <style name="SearchHistoryResetButtonStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:layout_marginTop">@dimen/search_result_error_button_margin_top</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:text">@string/search_history_reset_button_text</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/ys_display_medium</item>
+        <item name="android:textFontWeight">500</item>>
+        <item name="cornerRadius">@dimen/padding_horizontal</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:backgroundTint">?attr/colorOnPrimary</item>
+        <item name="android:textAlignment">center</item>
 
+    </style>
 
 </resources>
