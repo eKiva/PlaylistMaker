@@ -74,6 +74,7 @@
         <item name="android:textColorHint">?attr/editTextHintColor</item>
         <item name="android:background">?attr/editTextBackgroundDrawable</item>
         <item name="android:drawableTint">?attr/editTextDrawableTint</item>
+        <item name="android:textCursorDrawable">@drawable/blue_cursor</item>
 
     </style>
 

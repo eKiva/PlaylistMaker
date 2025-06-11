@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
 //
         val sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
-        val darkThemeEnabled: Boolean = sharedPreferences.getBoolean(DARK_THEME, false)
+        val darkThemeEnabled: Boolean = sharedPreferences.getBoolean(DARK_THEME, true)
         (applicationContext as App).switchTheme(darkThemeEnabled)
 
         val buttonSearch = findViewById<Button>(R.id.button_find)

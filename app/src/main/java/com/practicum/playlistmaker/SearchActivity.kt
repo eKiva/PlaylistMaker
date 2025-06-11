@@ -56,8 +56,9 @@ class SearchActivity : AppCompatActivity() {
         // Кнопка Назад
         val toMainButton = findViewById<ImageView>(R.id.button_to_main)
         toMainButton.setOnClickListener {
-            val displayIntent = Intent(this, MainActivity::class.java)
-            startActivity(displayIntent)
+            //val displayIntent = Intent(this, MainActivity::class.java)
+            //startActivity(displayIntent)
+            finish()
         }
 
 
@@ -116,6 +117,9 @@ class SearchActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 clearButton.visibility = clearButtonVisibility(s)
+                if (s.isNullOrEmpty()){
+                    showSearchResults(TrackSearchResultsType.EMPTY, sharedPreferences)
+                }
             }
 
             override fun afterTextChanged(s: Editable?) {
