@@ -16,6 +16,7 @@
         <item name="colorMainActivityBackground">@color/blue</item>
         <item name="colorActivityBackground">@color/white</item>
 
+
         <!-- Экран настроек -->
         <item name="colorIconTint">@color/gray</item>
         <item name="colorTextOnBackground">@color/white</item>
@@ -25,6 +26,7 @@
         <!--  Switcher переключения темы в SettingsActivity  -->
         <item name="switcherThumbTint">@color/gray</item>
         <item name="switcherTrackTint">@color/gray</item>
+        <item name="currentThemeSwitcherTitle">Темная тема</item>
 
 
         <!--  EditText в SearchActivity  -->
