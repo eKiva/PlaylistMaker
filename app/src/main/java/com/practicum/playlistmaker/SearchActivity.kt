@@ -39,7 +39,7 @@ class SearchActivity : AppCompatActivity() {
     var trackList: MutableList<Track> = mutableListOf()
 
 
-    var trackSearchHistoryList: MutableList<Track> = mutableListOf()
+    var trackSearchHistory: MutableList<Track> = mutableListOf()
     var searchFieldHasFocus = false
 
 
@@ -54,7 +54,7 @@ class SearchActivity : AppCompatActivity() {
             insets
         }
         // Кнопка Назад
-        val toMainButton = findViewById<ImageView>(R.id.button_to_main)
+        val toMainButton = findViewById<ImageView>(R.id.buttonToMain)
         toMainButton.setOnClickListener {
             //val displayIntent = Intent(this, MainActivity::class.java)
             //startActivity(displayIntent)
@@ -64,7 +64,7 @@ class SearchActivity : AppCompatActivity() {
 
 
         val sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
-        val searchEditText = findViewById<EditText>(R.id.search_editText)
+        val searchEditText = findViewById<EditText>(R.id.searchEditText)
 
 
         val searchResultsRecyclerView = findViewById<RecyclerView>(R.id.trackList)
@@ -79,7 +79,7 @@ class SearchActivity : AppCompatActivity() {
 
 
         //Очистка поиска
-        val clearButton = findViewById<ImageView>(R.id.search_clear_imageView)
+        val clearButton = findViewById<ImageView>(R.id.searchClear)
         clearButton.visibility = clearButtonVisibility(searchEditText.text)
         clearButton.setOnClickListener {
             searchEditText.setText("")
@@ -89,10 +89,10 @@ class SearchActivity : AppCompatActivity() {
         }
 
         //Очистка истории поиска
-        val historyResetButton = findViewById<Button>(R.id.history_reset_button)
+        val historyResetButton = findViewById<Button>(R.id.historyReset)
         historyResetButton.setOnClickListener {
-            trackSearchHistoryList.clear()
-            sharedPreferences.edit().putString(TRACKS_SEARCH_HISTORY, Gson().toJson(trackSearchHistoryList)).apply()
+            trackSearchHistory.clear()
+            sharedPreferences.edit().putString(TRACKS_SEARCH_HISTORY, Gson().toJson(trackSearchHistory)).apply()
             showSearchResults(TrackSearchResultsType.EMPTY, sharedPreferences)
         }
 
@@ -105,7 +105,7 @@ class SearchActivity : AppCompatActivity() {
         }
 
         //Обновить после ошибки
-        val searchErrorRefreshButton = findViewById<Button>(R.id.search_error_refresh_button)
+        val searchErrorRefreshButton = findViewById<Button>(R.id.searchRefresh)
         searchErrorRefreshButton.setOnClickListener {
             getTrackSearchResults(searchTrackService, searchEditText.text.toString(), sharedPreferences)
         }
@@ -153,25 +153,26 @@ class SearchActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
         outState.putString(SEARCHED_TEXT, searchedText)
 
-        val searchErrorPlaceholderFrame = findViewById<FrameLayout>(R.id.search_error_placeholder)
-        val searchNoResultsPlaceholderFrame = findViewById<FrameLayout>(R.id.search_no_results_placeholder)
+        val searchErrorPlaceholderFrame = findViewById<FrameLayout>(R.id.searchErrorPlaceholder)
+        val searchNoResultsPlaceholderFrame = findViewById<FrameLayout>(R.id.searchNoResultsPlaceholder)
 
-        outState.putBoolean(SHOW_SEARCH_ERROR_PLACEHOLDER_KEY, searchErrorPlaceholderFrame.visibility == View.VISIBLE)
-        outState.putBoolean(SHOW_NO_RESULTS_ERROR_PLACEHOLDER_KEY, searchNoResultsPlaceholderFrame.visibility == View.VISIBLE)
-        outState.putString(TRACK_LIST_STRING_KEY, Gson().toJson(trackList))
+        outState.putBoolean(SHOW_ERROR_SEARCH, searchErrorPlaceholderFrame.visibility == View.VISIBLE)
+        outState.putBoolean(SHOW_ERROR_NO_RESULTS, searchNoResultsPlaceholderFrame.visibility == View.VISIBLE)
+        outState.putString(TRACK_LIST, Gson().toJson(trackList))
     }
 
     // Переопределяем получение Activity
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         searchedText = savedInstanceState.getString(SEARCHED_TEXT, EMPTY_TEXT)
-        val showSearchErrorPlaceHolder = savedInstanceState.getBoolean(SHOW_SEARCH_ERROR_PLACEHOLDER_KEY, false)
-        val showSearchNoResultsPlaceHolder = savedInstanceState.getBoolean(SHOW_NO_RESULTS_ERROR_PLACEHOLDER_KEY, false)
+
+        val showSearchErrorPlaceHolder = savedInstanceState.getBoolean(SHOW_ERROR_SEARCH, false)
+        val showSearchNoResultsPlaceHolder = savedInstanceState.getBoolean(SHOW_ERROR_NO_RESULTS, false)
         val sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
 
-        val searchEditText = findViewById<EditText>(R.id.search_editText)
-        val searchErrorPlaceholderFrame = findViewById<FrameLayout>(R.id.search_error_placeholder)
-        val searchNoResultsPlaceholderFrame = findViewById<FrameLayout>(R.id.search_no_results_placeholder)
+        val searchEditText = findViewById<EditText>(R.id.searchEditText)
+        val searchErrorPlaceholderFrame = findViewById<FrameLayout>(R.id.searchErrorPlaceholder)
+        val searchNoResultsPlaceholderFrame = findViewById<FrameLayout>(R.id.searchNoResultsPlaceholder)
 
         searchEditText.setText(searchedText)
 
@@ -188,13 +189,13 @@ class SearchActivity : AppCompatActivity() {
             searchNoResultsPlaceholderFrame.visibility = View.GONE
         }
 
-        val stringTextList = savedInstanceState.getString(TRACK_LIST_STRING_KEY, EMPTY_TEXT)
+        val stringTextList = savedInstanceState.getString(TRACK_LIST, EMPTY_TEXT)
 
         if (stringTextList != null && stringTextList != ""){
             val restoredTrackArray: Array<Track> = Gson().fromJson(stringTextList, Array<Track>::class.java)
             trackList = restoredTrackArray.toMutableList()
             if (trackList.size > 0) {
-                val recyclerView = findViewById<RecyclerView>(R.id.trackList)
+                //val recyclerView = findViewById<RecyclerView>(R.id.trackList)
                 showSearchResults(TrackSearchResultsType.SUCCESS, sharedPreferences)
             }
         }
@@ -218,8 +219,8 @@ class SearchActivity : AppCompatActivity() {
     fun showSearchResults(trackSearchResultsType: TrackSearchResultsType, sharedPreferences: SharedPreferences){
 
         //Плейсхолдеры для ошибочного результата поиска и отсутствия результата
-        val searchErrorPlaceholderFrame = findViewById<FrameLayout>(R.id.search_error_placeholder)
-        val searchNoResultsPlaceholderFrame = findViewById<FrameLayout>(R.id.search_no_results_placeholder)
+        val searchErrorPlaceholderFrame = findViewById<FrameLayout>(R.id.searchErrorPlaceholder)
+        val searchNoResultsPlaceholderFrame = findViewById<FrameLayout>(R.id.searchNoResultsPlaceholder)
 
 
         val searchResultFrame = findViewById<FrameLayout>(R.id.searchResultsFrame)
@@ -312,7 +313,8 @@ class SearchActivity : AppCompatActivity() {
                 override fun onFailure(call: Call<SearchTrackResponse>, t: Throwable) {
                     showSearchResults(TrackSearchResultsType.ERROR, sharedPreferences)
                 }
-            })
+            }
+            )
     }
 
     fun getTrackOnClickListener(sharedPreferences: SharedPreferences): TrackAdapter.OnTrackClickListener{
@@ -321,8 +323,8 @@ class SearchActivity : AppCompatActivity() {
         val stateClickListener: TrackAdapter.OnTrackClickListener =
             object : TrackAdapter.OnTrackClickListener {
                 override fun onTrackClick(track: Track, position: Int) {
-                    updateTrackList(trackSearchHistoryList, track)
-                    sharedPreferences.edit().putString(TRACKS_SEARCH_HISTORY, Gson().toJson(trackSearchHistoryList)).apply()
+                    updateTrackList(trackSearchHistory, track)
+                    sharedPreferences.edit().putString(TRACKS_SEARCH_HISTORY, Gson().toJson(trackSearchHistory)).apply()
                 }
             }
 
@@ -369,10 +371,10 @@ class SearchActivity : AppCompatActivity() {
         if (stringSearchHistoryList != null && stringSearchHistoryList != "" && searchFieldHasFocus){
             val trackSearchHistoryArray: Array<Track> = Gson().fromJson(stringSearchHistoryList, Array<Track>::class.java)
 
-            trackSearchHistoryList = trackSearchHistoryArray.toMutableList()
-            if (trackSearchHistoryList.size > 0) {
+            trackSearchHistory = trackSearchHistoryArray.toMutableList()
+            if (trackSearchHistory.size > 0) {
 
-                val trackAdapter = TrackAdapter(trackSearchHistoryList, getTrackOnClickListener(sharedPreferences))
+                val trackAdapter = TrackAdapter(trackSearchHistory, getTrackOnClickListener(sharedPreferences))
                 recyclerView.adapter = trackAdapter
                 searchHistoryFrame.visibility = View.VISIBLE
             }
@@ -391,9 +393,9 @@ class SearchActivity : AppCompatActivity() {
     companion object {
         const val SEARCHED_TEXT = "SEARCHED_TEXT"
 
-        const val SHOW_SEARCH_ERROR_PLACEHOLDER_KEY = "SHOW_SEARCH_ERROR_PLACEHOLDER"
-        const val SHOW_NO_RESULTS_ERROR_PLACEHOLDER_KEY = "SHOW_NO_RESULTS_ERROR_PLACEHOLDER"
-        const val TRACK_LIST_STRING_KEY = "TRACK_LIST"
+        const val SHOW_ERROR_SEARCH = "SHOW_SEARCH_ERROR_PLACEHOLDER"
+        const val SHOW_ERROR_NO_RESULTS = "SHOW_NO_RESULTS_ERROR_PLACEHOLDER"
+        const val TRACK_LIST = "TRACK_LIST"
 
         const val EMPTY_TEXT = ""
     }

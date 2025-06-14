@@ -215,7 +215,7 @@
     </style>
 
 
-    <style name="SearchErrorButtonStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+    <style name="SearchErrorButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
         <item name="android:layout_marginTop">@dimen/search_result_error_button_margin_top</item>
         <item name="android:maxLines">1</item>
         <item name="android:padding">6dp</item>
