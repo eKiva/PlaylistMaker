@@ -21,9 +21,8 @@ class MediaActivity : AppCompatActivity() {
 
         val toMainButton = findViewById<ImageView>(R.id.button_to_main)
         toMainButton.setOnClickListener {
-            // val displayIntent = Intent(this, MainActivity::class.java)
-            //startActivity(displayIntent)
-            finish()
+            val displayIntent = Intent(this, MainActivity::class.java)
+            startActivity(displayIntent)
         }
     }
 }

@@ -9,9 +9,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.playlistmaker.App
-import com.google.android.material.switchmaterial.SwitchMaterial
-
 
 
 class SettingsActivity : AppCompatActivity() {
@@ -27,10 +24,8 @@ class SettingsActivity : AppCompatActivity() {
 
         val toMainButton = findViewById<ImageView>(R.id.button_to_main)
         toMainButton.setOnClickListener {
-            // val displayIntent = Intent(this, MainActivity::class.java)
-            // displayIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            // startActivity(displayIntent)
-            finish()
+            val displayIntent = Intent(this, MainActivity::class.java)
+            startActivity(displayIntent)
         }
 
         val toShare = findViewById<TextView>(R.id.share)
@@ -60,20 +55,6 @@ class SettingsActivity : AppCompatActivity() {
             startActivity(shareIntent)
         }
 
-        //Переключатель темы
-        val sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
-        val themeSwitcher = findViewById<SwitchMaterial>(R.id.themeSwitch)
-        val darkThemeEnabled: Boolean = sharedPreferences.getBoolean(DARK_THEME, false)
-
-        themeSwitcher.isChecked = darkThemeEnabled
-
-        themeSwitcher.setOnCheckedChangeListener {switcher, checked ->
-            (applicationContext as App).switchTheme(checked)
-
-            sharedPreferences.edit()
-                .putBoolean(DARK_THEME, checked)
-                .apply()
-        }
 
     }
 }

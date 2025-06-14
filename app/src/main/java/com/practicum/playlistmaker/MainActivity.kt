@@ -1,8 +1,6 @@
 package com.practicum.playlistmaker
 
-import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -11,13 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.playlistmaker.App
 
-
-//++
-const val PREFERENCES = "app_settings"
-const val DARK_THEME = "setting_dark_theme"
-const val TRACKS_SEARCH_HISTORY = "tracks_search_history"
 
 
 
@@ -33,19 +25,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-//
-        val sharedPreferences = getSharedPreferences(PREFERENCES, MODE_PRIVATE)
 
-        if (sharedPreferences.contains(DARK_THEME)) {
-            val darkThemeEnabled: Boolean = sharedPreferences.getBoolean(DARK_THEME, false)
-            (applicationContext as App).switchTheme(darkThemeEnabled)
-        }
-        else
-        {
-            sharedPreferences.edit()
-                .putBoolean(DARK_THEME, isNightModeEnabled(this))
-                .apply()
-        }
 
         val buttonSearch = findViewById<Button>(R.id.button_find)
         buttonSearch.setOnClickListener {
@@ -66,11 +46,5 @@ class MainActivity : AppCompatActivity() {
             startActivity(displayIntent)
         }
 
-    }
-
-    fun isNightModeEnabled(context: Context): Boolean {
-        val resources = context.resources
-        val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
-        return currentNightMode == Configuration.UI_MODE_NIGHT_YES
     }
 }
