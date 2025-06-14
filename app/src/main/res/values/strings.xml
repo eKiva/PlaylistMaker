@@ -29,4 +29,11 @@
     <string name="search_error_button_text">Обновить</string>
 
 
+    <string name="dark_theme_title">Темная тема</string>
+
+
+
+    <string name="search_history_reset_button_text">Очистить историю</string>
+    <string name="search_history_title">Вы искали</string>
+
 </resources>

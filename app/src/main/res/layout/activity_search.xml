@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SearchActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,7 +19,7 @@
             android:orientation="horizontal"
             android:padding="@dimen/padding_mini">
             <ImageView
-                android:id="@+id/button_to_main"
+                android:id="@+id/buttonToMain"
                 android:contentDescription="@string/button_find"
                 style="@style/ButtonBackStyle"/>
             <TextView
@@ -28,22 +27,27 @@
                 style="@style/TitleActivityStyle"/>
         </LinearLayout>
 
-        <FrameLayout style="@style/SearchFrameStyle">
+
+
+        <!--Строка поиска песен-->
+        <FrameLayout android:id="@+id/searchInputFrame"
+            style="@style/SearchFrameStyle">
 
             <EditText
-                android:id="@+id/search_editText"
+                android:id="@+id/searchEditText"
                 android:imeOptions="actionDone"
                 android:singleLine="true"
                 style="@style/SearchEditTextStyle" />
             <ImageView
-                android:id="@+id/search_clear_imageView"
+                android:id="@+id/searchClear"
                 style="@style/ClearImageViewStyle" />
         </FrameLayout>
 
-
-        <FrameLayout
+        <!--Результат поиска, список песен-->
+        <FrameLayout android:id="@+id/searchResultsFrame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:visibility="gone"
             android:paddingTop="16dp">
 
             <androidx.recyclerview.widget.RecyclerView
@@ -51,61 +55,98 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
-            <!--Ничего не найдено-->
-            <FrameLayout
-                android:id="@+id/search_no_results_placeholder"
+        </FrameLayout>
+
+        <!--История поиска-->
+        <LinearLayout
+            android:id="@+id/searchHistoryFrame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="16dp">
+
+            <TextView
+                android:id="@+id/youLookingFor"
+                style="@style/SearchPlaceHolderStyle"
+                android:layout_width="312dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/search_history_title"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/trackHistorySearchList"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="gone">
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
 
 
-                <ImageView
-                    android:id="@+id/search_no_results_image"
-                    android:src="?attr/searchNoResults"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="@dimen/search_result_error_image_margin_top"/>
-                <TextView
-                    style="@style/SearchPlaceHolderStyle"
-                    android:layout_height="20dp"
-                    android:layout_width="312dp"
-                    android:text="@string/search_no_results_placeholder_text"/>
-            </FrameLayout>
+            <!--Очистка поиска-->
+            <Button
+                android:id="@+id/historyReset"
+                style="@style/SearchHistoryResetButtonStyle"
+                android:layout_width="148dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"/>
+
+        </LinearLayout>
 
 
-            <!--Ошибка поиска-->
-            <FrameLayout
-                android:id="@+id/search_error_placeholder"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="gone">
+        <!--.................................... -->
 
-                <ImageView
-                    android:id="@+id/search_error_image"
-                    android:src="?attr/searchError"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="@dimen/search_result_error_image_margin_top"/>
+        <!--Ничего не найдено-->
+        <FrameLayout
+            android:id="@+id/searchNoResultsPlaceholder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
 
-                <TextView
-                    style="@style/SearchPlaceHolderStyle"
-                    android:layout_height="88dp"
-                    android:layout_width="312dp"
-                    android:text="@string/search_error_placeholder_text"/>
+            <ImageView
+                android:id="@+id/searchNoResultsImage"
+                android:src="?attr/searchNoResults"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/search_result_error_image_margin_top"/>
+            <TextView
+                style="@style/SearchPlaceHolderStyle"
+                android:layout_height="20dp"
+                android:layout_width="312dp"
+                android:text="@string/search_no_results_placeholder_text"/>
 
-                <Button
-                    style="@style/SearchErrorButtonStyle"
-                    android:id="@+id/search_error_refresh_button"
-                    android:layout_width="91dp"
-                    android:layout_height="36dp"/>
-            </FrameLayout>
+        </FrameLayout>
 
+        <!--Ошибка поиска-->
+        <FrameLayout
+            android:id="@+id/searchErrorPlaceholder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/searchErrorImage"
+                android:src="?attr/searchError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/search_result_error_image_margin_top"/>
+
+            <TextView
+                style="@style/SearchPlaceHolderStyle"
+                android:layout_height="88dp"
+                android:layout_width="312dp"
+                android:text="@string/search_error_placeholder_text"/>
+
+            <Button
+                android:id="@+id/searchRefresh"
+                style="@style/SearchErrorButton"
+                android:layout_width="91dp"
+                android:layout_height="36dp"/>
         </FrameLayout>
 
 
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

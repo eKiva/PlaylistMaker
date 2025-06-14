@@ -7,20 +7,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?attr/colorPrimary"
         android:orientation="vertical"
         android:paddingBottom="@dimen/padding_bottom">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/title_panel_height"
             android:background="?attr/colorPrimary"
             android:orientation="horizontal"
-
             android:padding="@dimen/padding_mini">
             <ImageView
                 style="@style/ButtonBackStyle"
@@ -32,62 +29,37 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/padding_big"
-            android:paddingHorizontal="@dimen/padding_main"
-            android:orientation="vertical">
+            style="@style/MenuItemsLinearLayoutStyle">
 
 
-
-
-        <FrameLayout
-                android:id="@+id/darkThemeFrameLayout2"
+            <FrameLayout
+                android:id="@+id/darkThemeFrameLayout"
                 style="@style/MenuItemFrameStyle">
 
-            <Switch
-                android:id="@+id/themeSwitch2"
-                style="@style/SwitchStyle" />
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/themeSwitch"
+                    style="@style/SwitcherStyle"/>
 
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/darkThemeFrameLayout"
-            style="@style/MenuItemFrameStyle">
-
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/themeSwitch"
-                style="@style/SwitchStyle"/>
-
-        </FrameLayout>
+            </FrameLayout>
 
 
 
 
-        <TextView
-            android:text="@string/tools_share_the_app"
-            android:id="@+id/share"
-            app:drawableEndCompat="@drawable/share_vector"
-            style="@style/SettingsPanelsStyle"/>
-
-        <TextView
-            android:text="@string/tools_write_to_support"
-            android:id="@+id/toSupport"
-            app:drawableEndCompat="@drawable/support_vector"
-            style="@style/SettingsPanelsStyle"/>
-
-        <TextView
-            android:text="@string/tools_user_agreement"
-            android:id="@+id/userAgreement"
-            app:drawableEndCompat="@drawable/arrow_forward_vector"
-            style="@style/SettingsPanelsStyle"/>
-
-
+            <TextView
+                android:text="@string/tools_share_the_app"
+                android:id="@+id/share"
+                app:drawableEndCompat="@drawable/share_vector"
+                style="@style/SettingsPanelsStyle"/>
+            <TextView
+                android:text="@string/tools_write_to_support"
+                android:id="@+id/toSupport"
+                app:drawableEndCompat="@drawable/support_vector"
+                style="@style/SettingsPanelsStyle"/>
+            <TextView
+                android:text="@string/tools_user_agreement"
+                android:id="@+id/userAgreement"
+                app:drawableEndCompat="@drawable/arrow_forward_vector"
+                style="@style/SettingsPanelsStyle"/>
+        </LinearLayout>
     </LinearLayout>
-
-
-</LinearLayout>
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
