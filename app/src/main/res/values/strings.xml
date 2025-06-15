@@ -32,8 +32,16 @@
     <string name="dark_theme_title">Темная тема</string>
 
 
-
     <string name="search_history_reset_button_text">Очистить историю</string>
     <string name="search_history_title">Вы искали</string>
+
+
+
+    <string name="countryLabel">Страна</string>
+    <string name="primaryGenreNameLabel">Жанр</string>
+    <string name="releaseDateLabel">Год</string>
+    <string name="collectionNameLabel">Альбом</string>
+    <string name="trackTimeMillsLabel">Длительность</string>
+
 
 </resources>

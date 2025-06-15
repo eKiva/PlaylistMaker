@@ -43,8 +43,9 @@
         <item name="searchNoResults">@drawable/search_no_results_light_mode</item>
 
         <!--   -->
-
-
+        <item name="addToList">@drawable/audio_player_add_light</item>
+        <item name="addToFavorites">@drawable/audio_player_like_light</item>
+        <item name="blackLight_white">@color/black</item>
     </style>
 
 
