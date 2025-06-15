@@ -22,7 +22,7 @@
             android:padding="@dimen/padding_mini">
             <ImageView
                 style="@style/ButtonBackStyle"
-                android:id="@+id/button_to_main"
+                android:id="@+id/buttonToMain"
                 android:contentDescription="@string/button_media"/>
             <TextView
                 android:text="@string/button_media"

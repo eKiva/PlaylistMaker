@@ -325,6 +325,13 @@ class SearchActivity : AppCompatActivity() {
                 override fun onTrackClick(track: Track, position: Int) {
                     updateTrackList(trackSearchHistory, track)
                     sharedPreferences.edit().putString(TRACKS_SEARCH_HISTORY, Gson().toJson(trackSearchHistory)).apply()
+
+                    val displayIntent = Intent(this@SearchActivity, AudioPlayerActivity::class.java).apply {
+                        putExtra("selectedTrack", Gson().toJson(track))
+                    }
+                    startActivity(displayIntent)
+
+
                 }
             }
 

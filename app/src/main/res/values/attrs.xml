@@ -33,6 +33,11 @@
     <attr name="searchNoResults" format="reference" />
     <attr name="searchError" format="reference" />
 
+    <attr name="blackLight_white" format="color" />
+    <attr name="white_blackLight" format="color" />
+
+    <attr name="addToList" format="reference" />
+    <attr name="addToFavorites" format="reference" />
 
 
 </resources>

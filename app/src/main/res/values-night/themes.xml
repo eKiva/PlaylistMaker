@@ -41,8 +41,9 @@
         <item name="searchError">@drawable/search_error_dark_mode</item>
         <item name="searchNoResults">@drawable/search_no_results_dark_mode</item>
 
-
-
+        <item name="addToList">@drawable/audio_player_add_dark</item>
+        <item name="addToFavorites">@drawable/audio_player_like_dark</item>
+        <item name="blackLight_white">@color/white</item>
     </style>
 
 </resources>
